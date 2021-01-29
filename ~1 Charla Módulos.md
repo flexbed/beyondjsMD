@@ -1,10 +1,11 @@
- ### Aclaraciones respecto de los módulos
+# Charla Módulos
+### Aclaraciones respecto de los módulos
 Beyond está compuesto por módulos y los módulos tienen _bundles_ además de archivos estáticos.
 Esto genera una confusión respecto de la terminología utilizada, porque es necesario diferenciar los módulos de Beyond que van a ser importados/exportados (internamente) en los bundles de los bundles en sí (que a su vez van a ser importados/exportados por otros bundles).
 
 > **NOTA:** A los módulos de BeyondJS, los voy a llamar _BeyondModules_.
 
- ### Creación de módulo ANIMAL
+### Creación de módulo ANIMAL
 Primero creamos el `module.json` dentro del directorio en el que vamos a programa el modulo y en el mismo, definimos
 ```json
 {
@@ -49,7 +50,7 @@ En animal.ts, hago simplemente
 `export /*bundle*/`  
 donde ese "comentario" `/*bundle*/` le va a indicar a los procesadores de BeyondJS que ese export se debe exponer en el _BeyondModule_.  
 
- ### Código Compilado
+### Código Compilado
 Nuestro directorio quedó de la siguiente forma:
 ```bash
 model
@@ -61,7 +62,7 @@ El código compilado de nuestro _BeyondModule_ va a quedar "visible" en nuestro 
 `localhost:8080/model/ts.js`  
 Va a ser un código sincrónico CommonJS empaquetado por BeyondJS.
 
- ### Carga del _BeyondModule_ desde el browser
+### Carga del _BeyondModule_ desde el browser
 Para importar mi nuevo modulo desde una página, BeyondJS propone un modelo donde no se utiliza el path "físico" de los archivos, en cambio, se utiliza:      
 `import {Dog} from "@dependencies/@docs/animals/ts"`  
 De esta forma, el código puede ubicarse donde el desarrollador prefiera, ya que la definición de la dependencia está dada por el _developer_ y el _name_ y es resuelto por BeyondJS. La estructura de la ruta de importación es:
@@ -74,7 +75,10 @@ De esta forma, el código puede ubicarse donde el desarrollador prefiera, ya que
 
 <u>**@TODO:**</u> El dashboard de BeyondJS debería generar los archivos de declaraciones necesarias para que el IDE reconozca el import (en el directorio @dependencies local).  
 
- ### Visión general sobre los módulos
+### Visión general sobre los módulos
 El objetivo es que los _BeyondModules_ estén "al alcance" de los desarrolladores al momento de crear sus proyectos, permitiendo de esa forma, cada uno pueda liberar sus propios _BeyondModules_ para que sean recogidos por la comunidad para reutilizarlos, refinarlos, perfeccionarlos, etc. y a su vez volver a compartirlos con la comunidad. Apuntando a un modelo abierto, sobre todo en lo que respecta a las interfaces gráficas.
 
+BeyondJS brinda una herramienta de sobreescritura de estilos y de sobreescritura de textos.  
+En muchos casos, la sobreescritura de estilos va a ser suficiente, agregando además la ventaja de que esas sobreescrituras no penalizan en ningún sentido ya que son preprocesados para que queden sólo los valores reescritos.  
 
+> **NOTA:** Desde acá, seguimos hablando sobre Hot Module Replacement (HMR) y archivos de textos.
