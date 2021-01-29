@@ -1,0 +1,101 @@
+# Primeras Charlas
+## 27-01-2021
+### Archivos de configuración
+> Comentarios sobre temas de configuración en archivos _.json_ de las aplicaciones.  
+
+En principio, habría que coordinar con Julio para ver de que manera se van a generar los archivos de documentación desde el _dashboard_ y en función de eso, documentar ese "camino" como principal, quedando la opción de una documentación más "avanzada" o en otro lugar de la misma, donde se expliquen las diferentes alternativas disponibles.  
+
+Ëstos son los archivos de configuración iniciales:
+**application.json**
+```json
+{
+  "name": "Javi",
+  "description": "Esta es la aplicación que va a usar Javi para hacer sus primeras pruebas en BeyondJS.",
+  "modules": "modules",
+  "port": "8080",
+  "template": "template/template.json"
+}
+```
+**applications.json**
+```json
+[
+    "application.json"
+]
+```
+**beyond.json**
+```json
+{
+  "applications": "applications.json"
+}
+```
+Y lo mismo aplica para las librerias:  
+`libraries.json` y `library.json`  
+
+La idea es que te bajas el _dashboard_ vea que estas en un directorio que no tiene nada y te aparezca "creá tu aplicación", y cuando lo hacés, te cree éstos archivos, documentemos de que van éstos archivos. Básicamente, que no tenga que ir el desarrollador a crearlos.  
+Todo el concepto del _dashboard_, apunta a que sea muy ágil la creación de las aplicaciones.  
+Hay tres librerías propias de BeyondJS, que en el _dashboard_ deberían estár visibles, pero como en un "segundo plano".  
+Al ingresar a la aplicación, aparecen los módulos.
+
+### Primer _BeyondModule_ (tipo page)
+> Comentarios sobre funcionalidades / opciones  del _dashboard_ y templates de aplicación.  
+
+Los _BeyondModules_ se definen con el `module.json`, creandolo dentro de un directorio BeyondJS ya interpreta que los archivos del mismo corresponden al módulo.  
+Para crear un módulo _page_, se deberá indicar en el json `"bundle": "page"` o alternativamente definirlo como sigue:  
+**module.json**
+```json
+{
+  "page": {
+    "route": "/",
+    "ts": {
+      "files": "*"
+    },
+    "less": {
+      "files": "*"
+    }
+  }
+}
+```
+De ésta manera, BeyondJS soporta definir más de un bundle en el mismo `module.json`, por ejemplo, los archivos de textos (son archivos independientes, uno por idioma).  
+> Comentarios sobre detalles de presentación en el _dashboard_ y módulos en el raíz.  
+
+#### page.tsx
+```javascript
+import {PageComponent} from "@dependencies/beyond/routing/ts";
+import {Dog} from "@dependencies/@javier/animals/ts";
+import {bundle} from "@dependencies/bundle";
+import {Control} from "./control";
+
+export /*bundle*/
+class Page extends PageComponent {
+
+    constructor(props: any) {
+        super(props, bundle, Control);
+    }
+
+}
+```
+#### control.tsx
+```javascript
+import React from "react";
+
+export class Control extends React.Component {
+
+    constructor(props: any) {
+        super(props);
+    }
+
+    render() {
+        return (<div className=".title-max">Hey!!</div>);
+    }
+
+}
+```
+#### styles.less
+```scss
+:host {
+  background: red;
+  color: white;
+}
+```
+
+@@ FALTA TERMINAR - 1:15:49
