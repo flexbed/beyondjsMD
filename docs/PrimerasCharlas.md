@@ -5,7 +5,7 @@
 
 En principio, habría que coordinar con Julio para ver de que manera se van a generar los archivos de documentación desde el _dashboard_ y en función de eso, documentar ese "camino" como principal, quedando la opción de una documentación más "avanzada" o en otro lugar de la misma, donde se expliquen las diferentes alternativas disponibles.  
 
-Ëstos son los archivos de configuración iniciales:
+Éstos son los archivos de configuración iniciales:  
 **application.json**
 ```json
 {
