@@ -1,0 +1,2 @@
+# BeyondJS :: Documentación Interna 
+

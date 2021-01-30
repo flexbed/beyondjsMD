@@ -1,0 +1,15 @@
+{
+  "name": "bjsdoc",
+  "version": "1.0.0",
+  "description": "Inernal BeyondJS Documentation",
+  "main": "index.js",
+  "dependencies": {
+    "docsify-cli": "^4.4.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "@jmarquez",
+  "license": "ISC"
+}
