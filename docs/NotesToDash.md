@@ -1,4 +1,4 @@
-# Notes To Dash
+# Notas
 
 > Tener presente que hay mezcla de idiomas (partes en inglés y partes en castellano).  
 
