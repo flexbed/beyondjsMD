@@ -16,7 +16,7 @@ Es decir, el setup de la aplicación (los JSONs) y los archivos de estilos globa
 ---
 > En la vista del listado de módulos de la aplicación, seleccionando cualquier cosa que no sea "application", muestra el dialogo para crear el primer módulo (incluso selecctionando "all")   
 
-Con la creación de un nuevo mósulo (_Módulo en blanco_ con textos y estilos) el dashboard se encarga de la creación de la siguiente estructura:
+Con la creación de un nuevo módulo (_Módulo en blanco_ con textos y estilos) el dashboard se encarga de la creación de la siguiente estructura:
 - :open_file_folder: __nombre__ (reemplazando los espacios por guiones bajos)
 - - :page_facing_up: module.json
 - - :page_facing_up: tsconfig.json
