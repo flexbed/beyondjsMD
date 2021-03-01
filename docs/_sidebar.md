@@ -5,3 +5,4 @@
 * [Server Side](3.ServerSide.md)
 * [Textos Preliminares Dashboard](4.TextosDashboard.md)
 * [Dashboard Notas](NotesToDash.md)
+* [Definiciones y @types](5.PruebasTS.md)
